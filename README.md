@@ -1,5 +1,5 @@
 # Ex.08 Design of Interactive Image Gallery
-# Date:06-10-2025
+# Date:
 # AIM:
 To design a web application for an inteactive image gallery with minimum five images.
 
@@ -23,102 +23,6 @@ Validate the HTML and CSS code.
 Publish the website in the given URL.
 
 # PROGRAM :
-```
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Simple Calculator Design</title>
-    <style>
-        .calculator {
-            border: 2px solid #333;
-            width: 250px;
-            padding: 10px;
-            margin: 20px auto; /* Centers the calculator */
-            background-color: #f2f2f2;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        #display {
-            width: 95%;
-            height: 50px;
-            margin-bottom: 10px;
-            text-align: right;
-            font-size: 28px;
-            padding: 5px;
-            border: 1px solid #999;
-            border-radius: 4px;
-            background-color: #fff;
-        }
-        .keypad button {
-            width: 100%;
-            height: 55px;
-            font-size: 20px;
-            margin: 2px;
-            border: none;
-            cursor: pointer;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            transition: background-color 0.1s;
-        }
-        .keypad button:hover {
-            background-color: #d1d1d1;
-        }
-        .operator {
-            background-color: #ff9500 !important;
-            color: white;
-        }
-        .operator:hover {
-            background-color: #e58800 !important;
-        }
-        .clear-button {
-            background-color: #ccc !important;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="calculator">
-        <input type="text" id="display" value="0" readonly>
-        <table class="keypad">
-             <tr>
-                <td><button class="clear-button">AC</button></td>
-                <td><button class="clear-button">+/-</button></td>
-                <td><button class="clear-button">%</button></td>
-                <td><button class="operator">/</button></td>
-            </tr>
-            <tr>
-                <td><button>7</button></td>
-                <td><button>8</button></td>
-                <td><button>9</button></td>
-                <td><button class="operator">*</button></td>
-            </tr>
-            <tr>
-                <td><button>4</button></td>
-                <td><button>5</button></td>
-                <td><button>6</button></td>
-                <td><button class="operator">-</button></td>
-            </tr>
-            <tr>
-                <td><button>1</button></td>
-                <td><button>2</button></td>
-                <td><button>3</button></td>
-                <td><button class="operator">+</button></td>
-            </tr>
-            <tr>
-                <td colspan="2"><button>0</button></td>
-                 <td><button>.</button></td>
-                <td><button class="operator">=</button></td>
-            </tr>
-        </table>
-    </div>
-
-</body>
-</html>
-```
 # OUTPUT:
-![1](https://github.com/user-attachments/assets/1d9812f5-b56c-4c54-b5b3-b2e1b1f3053f)
-![2](https://github.com/user-attachments/assets/d97b921f-c735-4257-a54b-55cee39affec)
-
 # RESULT:
 The program for designing an interactive image gallery using HTML, CSS and JavaScript is executed successfully.
