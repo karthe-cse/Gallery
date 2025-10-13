@@ -27,97 +27,121 @@ Publish the website in the given URL.
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Simple Calculator Design</title>
-    <style>
-        .calculator {
-            border: 2px solid #333;
-            width: 250px;
-            padding: 10px;
-            margin: 20px auto; /* Centers the calculator */
-            background-color: #f2f2f2;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        #display {
-            width: 95%;
-            height: 50px;
-            margin-bottom: 10px;
-            text-align: right;
-            font-size: 28px;
-            padding: 5px;
-            border: 1px solid #999;
-            border-radius: 4px;
-            background-color: #fff;
-        }
-        .keypad button {
-            width: 100%;
-            height: 55px;
-            font-size: 20px;
-            margin: 2px;
-            border: none;
-            cursor: pointer;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            transition: background-color 0.1s;
-        }
-        .keypad button:hover {
-            background-color: #d1d1d1;
-        }
-        .operator {
-            background-color: #ff9500 !important;
-            color: white;
-        }
-        .operator:hover {
-            background-color: #e58800 !important;
-        }
-        .clear-button {
-            background-color: #ccc !important;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Interactive Image Gallery</title>
+<link rel="stylesheet " href="gal.css">
 </head>
 <body>
 
-    <div class="calculator">
-        <input type="text" id="display" value="0" readonly>
-        <table class="keypad">
-             <tr>
-                <td><button class="clear-button">AC</button></td>
-                <td><button class="clear-button">+/-</button></td>
-                <td><button class="clear-button">%</button></td>
-                <td><button class="operator">/</button></td>
-            </tr>
-            <tr>
-                <td><button>7</button></td>
-                <td><button>8</button></td>
-                <td><button>9</button></td>
-                <td><button class="operator">*</button></td>
-            </tr>
-            <tr>
-                <td><button>4</button></td>
-                <td><button>5</button></td>
-                <td><button>6</button></td>
-                <td><button class="operator">-</button></td>
-            </tr>
-            <tr>
-                <td><button>1</button></td>
-                <td><button>2</button></td>
-                <td><button>3</button></td>
-                <td><button class="operator">+</button></td>
-            </tr>
-            <tr>
-                <td colspan="2"><button>0</button></td>
-                 <td><button>.</button></td>
-                <td><button class="operator">=</button></td>
-            </tr>
-        </table>
-    </div>
+<h1>Interactive Image Gallery</h1>
+<div class="gallery">
+  <img src="generated-image (3).png"  onclick="openLightbox(this)">
+  <img src="generated-image (4).png"  onclick="openLightbox(this)">
+  <img src="generated-image (5).png"  onclick="openLightbox(this)">
+  <img src="generated-image (6).png"  onclick="openLightbox(this)">
+  <img src="generated-image (7).png"  onclick="openLightbox(this)">
+  <img src="hacker-with-laptop.jpg"  onclick="openLightbox(this)">
+  <img src="istockphoto-537331500-1024x1024.jpg"  onclick="openLightbox(this)">
+<img src="pexels-designecologist-1779487.jpg"  onclick="openLightbox(this)">
+</div>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="close-btn" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="" alt="Expanded Image" />
+</div>
+
+<script>
+  function openLightbox(element) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightbox.style.display = 'flex';
+    lightboxImg.src = element.src;
+    lightboxImg.alt = element.alt;
+    event.stopPropagation();
+  }
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fb; 
+    margin: 0;
+    padding: 20px;
+    color: #333;
+  }
+  h1 {
+    text-align: center;
+    color: #005f73; 
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4,250px);
+    gap: 50px;
+    max-width: 960px;
+    margin: 20px auto;
+  }
+  .gallery img {
+    width: 100%;
+    height:300px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+  }
+  .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,95,115,0.5);
+  }
+
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,95,115,0.9); 
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+  }
+  .lightbox:target {
+    display: flex;
+  }
+  
+  .close-btn {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  .close-btn:hover {
+    color: #ffd166;
+  }
 
 </body>
 </html>
 ```
 # OUTPUT:
-![alt text](1.jpeg)
-![alt text](2.jpeg)
+![alt text](<WhatsApp Image 2025-10-13 at 11.24.49 (1).jpeg>)
+![alt text](<WhatsApp Image 2025-10-13 at 11.24.49 (1).jpeg>)
 # RESULT:
 The program for designing an interactive image gallery using HTML, CSS and JavaScript is executed successfully.
